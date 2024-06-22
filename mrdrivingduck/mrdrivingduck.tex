@@ -29,13 +29,15 @@
 % \phone[fixed]{+2~(345)~678~901}               % 可选项、如不需要可删除本行
 % \phone[fax]{+3~(456)~789~012}                 % 可选项、如不需要可删除本行
 \email{mrdrivingduck@gmail.com}                    % 可选项、如不需要可删除本行
-\homepage{https://mrdrivingduck.github.io/}                  % 可选项、如不需要可删除本行
+% \homepage{mrdrivingduck.github.io/blog}                  % 可选项、如不需要可删除本行
 % \extrainfo{附加信息 (可选项)}                 % 可选项、如不需要可删除本行
 % \photo[64pt][0.4pt]{picture}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 % \quote{引言(可选项)}                          % 可选项、如不需要可删除本行
 
 \social[github][github.com/mrdrivingduck]{mrdrivingduck}
 \social[linkedin][www.linkedin.com/in/jingtang-zhang-b38a76167/]{Jingtang Zhang}
+\social[blog][mrdrivingduck.github.io/blog]{Blog}
+\social[zhihu][www.zhihu.com/people/zhang-jing-tang-78/posts]{ZhiHu}
 
 % 显示索引号;仅用于在简历中使用了引言
 %\makeatletter
@@ -56,10 +58,35 @@
 \section{工作经历}
 \cventry
 {2022 年 - 至今}
-{PolarDB 数据库内核工程师}
+{云原生数据库 PolarDB 内核工程师}
 {阿里云计算有限公司}
-{浙江杭州}
-{}{主要工作：\href{https://github.com/ApsaraDB/PolarDB-for-PostgreSQL}{PolarDB for PostgreSQL} 内核研发}
+{浙江杭州}{}{
+  主要工作：\href{https://www.aliyun.com/product/apsaradb/polardbpg}{云原生数据库 PolarDB PostgreSQL} 引擎内核研发
+  \small
+  \begin{itemize}%
+    \item{
+      Relation Size Cache 功能研发：存储层表大小缓存，减少数据库对文件系统的 seek 请求
+    }
+    \item{
+      CPU bound 场景性能优化：x86\_64/aarch64 架构编译优化 (LTO/PGO/BOLT)、SIMD 加速
+    }
+    \item{
+      ePQ (Elastic Parallel Query) 功能研发：基于 MPP 框架加速创建 B-Tree 索引、加速创建物化视图
+    }
+    \item{
+      \href{https://help.aliyun.com/zh/polardb/polardb-for-postgresql/read-and-write-external-data-files-by-using-oss-fdw}{对象存储服务 (OSS) 外表插件}功能研发：支持通过 ePQ 并行上传/下载 OSS 数据，支持压缩
+    }
+    \item{
+      \href{https://help.aliyun.com/zh/polardb/polardb-for-postgresql/one-stop-htap-service}{云原生 HTAP} 功能研发：元信息管理、查询路由、通过 OSS 并行同步数据、逻辑复制性能优化
+    }
+    \item{
+      临时文件透明压缩功能研发：减少 Sort、Hash Join 等算子产生的临时文件对磁盘空间的占用
+    }
+    \item{
+      \href{https://github.com/ApsaraDB/PolarDB-for-PostgreSQL}{PolarDB for PostgreSQL 开源社区}维护：开发 \href{https://github.com/mrdrivingduck/polardb-bot}{GitHub 机器人}、\href{https://apsaradb.github.io/PolarDB-for-PostgreSQL/zh/}{文档基础设施}；直播与布道
+    }
+  \end{itemize}
+}
 
 \section{教育背景}
 \cventry
@@ -68,19 +95,17 @@
 {南京航空航天大学 计算机科学与技术学院 网络空间安全专业}
 {江苏南京}{}{
   研究方向：软件安全及可靠性 程序缺陷自动修复
-  \scriptsize
+  \footnotesize
   \begin{itemize}%
-    \item \textbf{
+    \item{
       \href
         {https://dl.acm.org/doi/10.1145/3579637}
         {TOSEM-2023 (CCF-A): Reliable Fix Patterns Inferred from Static Checkers for Automated Program Repair}
-        第二作者
     }
-    \item \textbf{
+    \item{
       \href
         {https://dl.acm.org/doi/10.1145/3579637}
         {ICSME-2021 (CCF-B): Revisiting Test Cases to Boost Generate-and-Validate Program Repair}
-        第一作者
     }\newline{}
   \end{itemize}
 }  % 第3到第6编码可留白
@@ -132,37 +157,16 @@
 {}
 {%
 \begin{itemize}%
-  \item \textbf{
+  \item{
     \href
       {https://github.com/NUAA-WatchDog/linux-kernel-elf-sig-verify-module}
       {ELF 可执行文件数字签名验证内核模块}
   }
-  \item \textbf{
+  \item{
     \href
       {https://github.com/NUAA-WatchDog/linux-elf-binary-signer}
       {ELF 可执行文件数字签名工具}
   }\newline{}
-\end{itemize}}
-
-\cventry
-{全国总决赛二等奖}
-{基于物联网的智能车载健康系统}
-{第七届 "中国软件杯" 大学生软件设计大赛}
-{2018 年}
-{}
-{%
-\begin{itemize}%
-  \item 带有传感器与蓝牙模块的嵌入式系统
-  \item \textbf{
-    \href
-    {https://github.com/NUAA-WatchDog/CARe-android}
-    {智能车载健康 Android 客户端}
-  }
-  \item \textbf{
-    \href
-    {https://github.com/NUAA-WatchDog/CARe-cloud-http-server}
-    {后端 HTTP 服务器}
-  } 与多进程 SVM 模型管理器 \newline{}
 \end{itemize}}
 
 \cventry
@@ -179,32 +183,26 @@
 {2017 年}
 {}{%
 \begin{itemize}%
-  \item \textbf{
+  \item{
     \href
     {https://github.com/mrdrivingduck/mips32-CPU}
     {在 Xilinx FPGA 上实现支持 57 条 MIPS 指令集的 CPU 电路}
   } \newline{}
 \end{itemize}}
 
-\cventry
-{江苏赛区三等奖}
-{C/C++ 程序设计大学 A 组}
-{第八届 "蓝桥杯" 程序设计竞赛}
-{2017 年}{}{}
-
 
 \section{实习经历}
 
 \cventry
 {2021 年 5 月 -- 2021 年 8 月}
-{PolarDB 数据库内核工程师 (实习)}
+{PolarDB 数据库内核工程师 实习}
 {阿里云计算有限公司}
 {浙江杭州}
-{}{主要工作：\href{https://github.com/ApsaraDB/PolarDB-for-PostgreSQL}{PolarDB for PostgreSQL} 内核执行器与 HTAP 引擎的相关开发}
+{}{主要工作：PolarDB for PostgreSQL 内核执行器与 ePQ 引擎相关开发}
 
 \cventry
 {2018 年 7 月 -- 2018 年 8 月}
-{软件开发工程师 (实习)}
+{软件开发工程师 实习}
 {浙江智臾科技有限公司 (DolphinDB Inc.)}
 {浙江杭州}
 {}{主要工作：\href{https://github.com/dolphindb/api-r}{DolphinDB R 语言 SDK 开发}}
@@ -216,31 +214,6 @@
 {负责前期技术选型和调研，基于 Antlr 语言识别框架实现原型系统}
 {华为云数据库 Oracle 业务迁移工具}
 {2020 年}{}{}
-
-\cventry{}
-{负责调研无线嗅探器及入侵检测方法，并集成实现原型系统}
-{无线局域网入侵检测系统 (本科毕业设计)}
-{2019 年}{}{
-  \begin{itemize}%
-    \item Vert.x + MongoDB 后端 / Vue.js 前端
-    \item \textbf{
-      \href
-        {https://github.com/mrdrivingduck/kismet-java-client}
-        {实现开源无线嗅探器 kismet 的 Java 客户端}
-    }
-    \item \textbf{
-      \href
-        {https://github.com/mrdrivingduck/scapy-web-server}
-        {基于 Python Scapy 实现有线局域网嗅探器}} \newline{}
-  \end{itemize}
-}
-
-\cventry
-{结题等级优秀，答辩获一等奖}
-{学院科创基金课题}
-{基于云平台的校园智能门禁系统}
-{2016 年}
-{负责 Android 客户端开发}{专利号 CN107845173A 在审}
 
 \section{语言技能}
 \cvdoubleitem{英语}{CET6 (2016/06)：547}{英语}{CET4 (2015/12)：584}
@@ -273,17 +246,13 @@
     {https://github.com/mrdrivingduck/understanding-nginx-notes}
     {Nginx}
 等}
-\cvitem{开发维护技术博客}{\small
-  \href
-    {https://mrdrivingduck.github.io/blog/}
-    {https://mrdrivingduck.github.io/blog/}
-}
 
 
-% \section{自我评价}
-% \cvitem{学习能力强，热爱技术}{\small 能够查阅各类中英文技术文档或论文，对各类系统的底层实现感兴趣}
-% \cvitem{自我要求高，责任心强}{\small 尤其是对代码，尽力追求完美，代码中少一个空格都会觉得不舒服}
-% \cvitem{做事先规划，细心求稳}{\small 喜欢严格按照规划做事，思考完再动手，做事爆发力不强但后劲足}
+\section{个人特质}
+\cvitem{性格类型}{ISFJ}
+\cvitem{学习能力强}{\small 能够无语言障碍查阅各类技术文档或论文原文，分析各类系统的底层实现}
+\cvitem{自我要求高}{\small 对代码有完美主义态度，精确到一个缩进或空格，做事细心}
+\cvitem{做事有规划}{\small 倾向于按照计划做事，思考完再动手，做事爆发力不强但后劲足，务实}
 
 
 % \section{求职意向}
